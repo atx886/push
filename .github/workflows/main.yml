@@ -4,7 +4,6 @@ on:
   watch: 
     types: started
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,8 +25,7 @@ jobs:
         if: github.event_name == 'schedule'
         run: sleep $(shuf -i 10-300 -n 1)
         
-      - name: Install dependencies
-        run: |
-          env: 
-            PUSH_PLUS_TOKEN:${{secrets.PUSH_PLUS_TOKEN}}
-          python h1.py
+      - name: task
+        env:
+          PUSH_PLUS_TOKEN: ${{secrets.PUSH_PLUS_TOKEN}}
+        run: python h.py
