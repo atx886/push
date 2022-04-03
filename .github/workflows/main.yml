@@ -28,4 +28,6 @@ jobs:
       - name: task
         env:
           PUSH_PLUS_TOKEN: ${{secrets.PUSH_PLUS_TOKEN}}
-        run: python h.py
+        run:
+          pip install requests
+          python h.py
